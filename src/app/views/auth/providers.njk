@@ -1,0 +1,32 @@
+{% extends "_layouts/default.njk" %}
+
+{% block body %}
+  <div class="provider-wrapper">
+    <h1>Funcionários</h1>
+    
+    <p>Olá {{user.name}}</p>
+    <a href="/app/logout">Sair</a>
+    <a href="/app/dashboard">Dashboard</a>
+
+    <div class="menu">
+      <div class="menu-item"><a href="/app/providers/register">Cadastrar Funcionário</a></div>
+    </div>
+
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Matrícula</th>
+      </tr>
+      {% for funcionario in funcionarios %}
+      <tr>
+        <td>{{funcionario.id}}</td>
+        <td>{{funcionario.name}}</td>
+        <td>{{funcionario.matricula}}</td>
+        <td><a href="/app/providers/register/{{funcionario.id}}">Editar</a> <a href="">Remover</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+
+  </div>
+{% endblock %}

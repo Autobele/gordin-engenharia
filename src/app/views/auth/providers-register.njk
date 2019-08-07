@@ -1,0 +1,24 @@
+{% extends "_layouts/default.njk" %}
+
+{% block body %}
+  <div class="provider-wrapper">
+    <h1>Funcionários</h1>
+    
+    <p>Olá {{user.name}}</p>
+    <a href="/app/logout">Sair</a>
+    <a href="/app/dashboard">Dashboard</a>
+
+    <p>{{funcionario.name}}</p>
+
+  <form action="/app/providers/create" method="post">
+
+    
+    
+    <input id="name" type="text" name="name" placeholder="Luiz Gonzaga" value="{{name}}" required>
+    <input id="matricula" type="text" name="matricula" placeholder="00001" required>
+
+    <button type="submit">Cadastrar</button>
+  </form>
+  <p>{{alertMatriculaExiste}}</p>
+  </div>
+{% endblock %}

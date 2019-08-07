@@ -1,0 +1,22 @@
+{% extends "_layouts/default.njk" %}
+
+{% block body %}
+  <div class="dashboard-wrapper">
+    <h1>Dashboard</h1>
+    
+    <p>Olá {{user.name}}</p>
+    <a href="/app/logout">Sair</a>
+
+    <div class="menu">
+      <div class="menu-item">
+        <a href="/app/providers">Funcionários</a>
+      </div>
+      <div class="menu-item">
+        <a href="">Obra</a>
+      </div>
+      <div class="menu-item">
+        <a href="">Ferramentas</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
